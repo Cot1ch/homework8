@@ -5,23 +5,16 @@ namespace homework8
 {
     internal class Customer : Employee
     {
-        List<Task> _Tasks;
-        List<Report> _Reports;
+        List<Project> _Projects;
         public Customer(string name)
         {
             Name = name;
-            _Tasks = new List<Task>();
-            _Reports = new List<Report>();
+            _Projects = new List<Project>();
         }
-        public List<Report> Reports
+        public List<Project> Projects
         {
-            get { return _Reports; }
-            set { _Reports = value; }
-        }
-        public List<Task> Tasks
-        {
-            get { return _Tasks; }
-            set { _Tasks = value; }
+            get { return _Projects; }
+            set { _Projects = value; }
         }
     }
 }

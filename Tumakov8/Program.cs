@@ -8,10 +8,10 @@ namespace Tumakov8
     {
         static void Main()
         {
-            Task1();
-            Task2();
+            //Task1();
+            //Task2();
             Task3();
-            Task4();
+            //Task4();
         }
         static void Task1()
         {
@@ -60,7 +60,7 @@ namespace Tumakov8
                 }
                 else
                 {
-                    Console.WriteLine("ахаха, смешно. Tакого ответа нет");
+                    Console.WriteLine("АХАХА, смешно. Tакого ответа нет");
                 }
             }
             while (flag2);
@@ -122,6 +122,7 @@ namespace Tumakov8
             songs.Add(new Song() { Name = "Nothing else Matters", Author = "Metallica", Previous = songs[0] });
             songs.Add(new Song() { Name = "Papercut", Author = "Linkin Park", Previous = songs[1] });
             songs.Add(new Song() { Name = "From the Inside", Author = "Linkin Park"});
+            
             songs.Add(new Song());
             
             

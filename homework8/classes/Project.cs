@@ -73,11 +73,19 @@ namespace homework8
 
         public override string ToString()
         {
-            string retStr = $"======>\nПроект: {Discription}\nДедлайн: {DeadLine}\nЗаказчик: {Customer.Name}\nТимлид: {TeamLid.Name}\nЗадачи: {Tasks[0].ToString()}\nСтатус: {Status}";
+            string tasks = String.Empty;
+            foreach (Task task in _Tasks)
+            {
+                tasks += task.ToString();
+            }
+            string retStr = $"======>\nПроект: {Discription}\nДедлайн: {DeadLine}\nЗаказчик: {Customer.Name}\nТимлид: {TeamLid.Name}\nЗадачи: {tasks}\nСтатус: {Status}";
 
             return retStr;
         }
-
+        public void ChangeStatus()
+        {
+            Console.WriteLine($"\t\t\t\t\tСтатус проекта изменён! Новый статус: {Status}");
+        }
         public DateTime EnterDate()
         {
             DateTime date = DateTime.Now;

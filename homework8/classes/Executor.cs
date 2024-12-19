@@ -5,31 +5,17 @@ namespace homework8
 {
     internal class Executor : Employee
     {
-        List<Task> _Tasks;
-        List<Project> _Projects;
-
-        public Executor(string name, List<Task> tasks, List<Project> projects)
-        {
-            Name = name;
-            _Tasks = tasks;
-            _Projects = projects;
-        }
+        private Dictionary<Task, Report> _TaskAndReports;
         public Executor(string name)
         {
             Name = name;
-            _Tasks = new List<Task>();
-            _Projects = new List<Project>();
+            Dictionary<Task, Report> _Tasks = new Dictionary<Task, Report>();
         }
 
-        public List<Task> Tasks
+        public Dictionary<Task, Report> TaskAndReports
         {
-            get { return _Tasks; }
-            set { _Tasks = value; }
-        }
-        public List<Project> Projects
-        {
-            get { return _Projects; }
-            set { _Projects = value; }
-        }
+            get { return _TaskAndReports; }
+            set { _TaskAndReports = value; }
+        }                 
     }
 }

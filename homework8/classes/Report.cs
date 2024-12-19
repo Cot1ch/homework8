@@ -7,13 +7,17 @@ namespace homework8
     {
         string _Text;
         DateTime _Date;
-        string _Executor;
+        Executor _Executor;
 
-        public Report(string text, DateTime date, string executor)
+        public Report(string text, DateTime date, Executor executor)
         {
             _Text = text;
             _Date = date;
             _Executor = executor;
+        }
+        public Report()
+        {
+
         }
         public string Text
         {
@@ -25,7 +29,7 @@ namespace homework8
             get { return _Date; }
             set { _Date = value; }
         }
-        public string Executor
+        public Executor Executor
         {
             get { return _Executor; }
             set { _Executor = value; }
@@ -50,6 +54,11 @@ namespace homework8
             }
             while (flag);
             return date;
+        }
+
+        public override string ToString()
+        {
+            return $">>Текст отчёта: {Text}\n>>Дата: {Date} Ответственный: {Executor.Name}\n";
         }
     }
 }

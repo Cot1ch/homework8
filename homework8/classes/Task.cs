@@ -8,12 +8,12 @@ namespace homework8
     {
         string _Discription;
         DateTime _DeadLine;
-        Customer _Customer;
+        Employee _Customer;
         Executor _Executor;
         TaskStatuses _Status;
         List<Report> _Reports;
 
-        public Task(string discription, DateTime deadLine, Customer customer, Executor executor, TaskStatuses status, List<Report> reports)
+        public Task(string discription, DateTime deadLine, Employee customer, Executor executor, TaskStatuses status, List<Report> reports)
         {
             _Discription = discription;
             _DeadLine = deadLine;
@@ -36,7 +36,7 @@ namespace homework8
             get { return _DeadLine; }
             set { _DeadLine = value; }
         }
-        public Customer Customer
+        public Employee Customer
         {
             get { return _Customer; }
             set { _Customer = value; }
@@ -60,12 +60,18 @@ namespace homework8
         {
             string retStr = String.Empty;
 
-            retStr += $"\nОписание:\n{Discription}\n";
+            retStr += "\n========================\n";
+            retStr += $"Описание:\n{Discription}\n";
             retStr += $"Дедлайн: {DeadLine}\n";
             retStr += $"Заказчик: {Customer.Name}\n";
             retStr += $"Исполнитель: {Executor.Name}\n";
             retStr += $"Статус задачи: {Status}\n";
-            retStr += $"Отчеты: {Reports}";
+            retStr += $"Отчеты:\n";
+            foreach (var report in _Reports)
+            {
+                retStr += report.ToString();
+            }
+            retStr += "========================\n";
 
             return retStr;
         }
@@ -90,6 +96,18 @@ namespace homework8
             }
             while (flag);
             return date;
+        }
+
+        public Report GetReport(string text, Executor executor)
+        {
+            Report report = null;
+
+            report.Text = text;
+            report.Date = DateTime.Now;
+            report.Executor = executor;
+
+            executor.TaskAndReports[this] = report;
+            return report;
         }
     }
 }
