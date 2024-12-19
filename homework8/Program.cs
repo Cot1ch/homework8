@@ -163,7 +163,7 @@ namespace homework8
                 Date = DateTime.Now,
                 Executor = task1.Executor
             };
-            task1.Reports.Add(report1);
+            task1.report = report1;
 
             Report report2 = new Report()
             {
@@ -171,7 +171,7 @@ namespace homework8
                 Date = DateTime.Now,
                 Executor = task2.Executor
             };
-            task2.Reports.Add(report2);
+            task2.report = report2;
 
             Report report3 = new Report()
             {
@@ -179,7 +179,7 @@ namespace homework8
                 Date = DateTime.Now,
                 Executor = task3.Executor
             };
-            task3.Reports.Add(report3);
+            task3.report = report3;
 
             Report report4 = new Report()
             {
@@ -187,7 +187,7 @@ namespace homework8
                 Date = DateTime.Now,
                 Executor = task4.Executor
             };
-            task4.Reports.Add(report4);
+            task4.report = report4;
 
             Report report5 = new Report()
             {
@@ -195,7 +195,7 @@ namespace homework8
                 Date = DateTime.Now.AddDays(-2),
                 Executor = task5.Executor
             };
-            task5.Reports.Add(report5);
+            task5.report = report5;
 
             Report report6 = new Report()
             {
@@ -203,7 +203,7 @@ namespace homework8
                 Date = DateTime.Now,
                 Executor = task6.Executor
             };
-            task6.Reports.Add(report6);
+            task6.report = report6;
 
             Report report7 = new Report()
             {
@@ -211,7 +211,7 @@ namespace homework8
                 Date = DateTime.Now,
                 Executor = task7.Executor
             };
-            task7.Reports.Add(report7);
+            task7.report = report7;
 
             Report report8 = new Report()
             {
@@ -219,7 +219,7 @@ namespace homework8
                 Date = DateTime.Now,
                 Executor = task8.Executor
             };
-            task8.Reports.Add(report8);
+            task8.report = report8;
 
             Report report9 = new Report()
             {
@@ -227,7 +227,7 @@ namespace homework8
                 Date = DateTime.Now,
                 Executor = task9.Executor
             };
-            task9.Reports.Add(report9);
+            task9.report = report9;
 
             Report report10 = new Report()
             {
@@ -235,7 +235,7 @@ namespace homework8
                 Date = DateTime.Now,
                 Executor = task10.Executor
             };
-            task10.Reports.Add(report10);
+            task10.report = report10;
 
             //По всем задачам сделаны отчеты, задачи на проверке
             for (int i = 0; i < tasks.Count; i++)

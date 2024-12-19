@@ -12,22 +12,21 @@ namespace homework8
         Employee _Customer;
         Executor _Executor;
         TaskStatuses _Status;
-        List<Report> _Reports;
+        Report _Report;
         #endregion
 
         #region Constructors
-        public Task(string discription, DateTime deadLine, Employee customer, Executor executor, TaskStatuses status, List<Report> reports)
+        public Task(string discription, DateTime deadLine, Employee customer, Executor executor, TaskStatuses status, Report report)
         {
             _Discription = discription;
             _DeadLine = deadLine;
             _Customer = customer;
             _Executor = executor;
             _Status = status;
-            _Reports = reports;
+            _Report = report;
         }
         public Task()
         {
-            _Reports = new List<Report>();
         }
         #endregion
 
@@ -57,10 +56,10 @@ namespace homework8
             get { return _Status; }
             set { _Status = value; }
         }
-        public List<Report> Reports
+        public Report report
         {
-            get { return _Reports; }
-            set { _Reports = value; }
+            get { return _Report; }
+            set { _Report = value; }
         }
         #endregion
 
@@ -79,9 +78,9 @@ namespace homework8
             retStr += $"Заказчик: {Customer.Name}\n";
             retStr += $"Исполнитель: {Executor.Name}\n";
             retStr += $"Статус задачи: {Status}\n";
-            retStr += $"Отчеты:\n";
-            foreach (var report in _Reports)
+            if (report != null)
             {
+                retStr += $"Отчет:\n";
                 retStr += report.ToString();
             }
             retStr += "========================\n";
