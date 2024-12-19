@@ -8,8 +8,7 @@ namespace homework8
     {
         static void Main()
         {
-            Taska(); // написать отчеты, реализовать смену статусов, добавить нумерацию задач,
-                     // Если хватит времени: добавить менюшку
+            Taska();
         }
 
         static void Taska()
