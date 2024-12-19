@@ -28,14 +28,14 @@ namespace homework8
             Executor dimoooon = new Executor("Дима");
             Executor salavat = new Executor("Салават");
             Executor kolya = new Executor("Коля");
-            Executor kolyan = new Executor("Коляy");
+            Executor kolyan = new Executor("Колян");
 
 
             Customer igor = new Customer("Игорь");
 
             List<Executor> customers = new List<Executor>()
             {
-                petya, vasya, semen, dasha, anya, nastystpnv, grisha, dimoooon, salavat, kolya
+                petya, vasya, semen, dasha, anya, nastystpnv, grisha, dimoooon, salavat, kolya, kolyan
             };
 
             Project project = new Project();
