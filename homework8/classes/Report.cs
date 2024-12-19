@@ -5,10 +5,13 @@ namespace homework8
 {
     internal class Report
     {
+        #region Fields
         string _Text;
         DateTime _Date;
         Executor _Executor;
+        #endregion
 
+        #region Constructors
         public Report(string text, DateTime date, Executor executor)
         {
             _Text = text;
@@ -16,9 +19,10 @@ namespace homework8
             _Executor = executor;
         }
         public Report()
-        {
+        { }
+        #endregion
 
-        }
+        #region Properties
         public string Text
         {
             get { return _Text; }
@@ -34,31 +38,19 @@ namespace homework8
             get { return _Executor; }
             set { _Executor = value; }
         }
+        #endregion
 
-        public DateTime EnterDate()
-        {
-            DateTime date = DateTime.Now;
-            bool flag = true;
-            Console.WriteLine("Введите дату в формате dd.MM.yyyy");
-            do
-            {
-                if (DateTime.TryParse(Console.ReadLine(), out DateTime resultDate) && resultDate >= DateTime.Now)
-                {
-                    date = resultDate;
-                    flag = false;
-                }
-                else
-                {
-                    Console.WriteLine("Введите реальную дату в формате dd.MM.yyyy");
-                }
-            }
-            while (flag);
-            return date;
-        }
+        #region Methods
 
+        /// <summary>
+        /// Метод возвращает информацию об отчете. 
+        /// Текст /Дата /Ответственный
+        /// </summary>
+        /// <returns>Строка string</returns>
         public override string ToString()
         {
             return $">>Текст отчёта: {Text}\n>>Дата: {Date} Ответственный: {Executor.Name}\n";
         }
+        #endregion
     }
 }

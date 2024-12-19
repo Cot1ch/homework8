@@ -6,13 +6,16 @@ namespace homework8
 {
     internal class Task
     {
+        #region Fields
         string _Discription;
         DateTime _DeadLine;
         Employee _Customer;
         Executor _Executor;
         TaskStatuses _Status;
         List<Report> _Reports;
+        #endregion
 
+        #region Constructors
         public Task(string discription, DateTime deadLine, Employee customer, Executor executor, TaskStatuses status, List<Report> reports)
         {
             _Discription = discription;
@@ -26,6 +29,9 @@ namespace homework8
         {
             _Reports = new List<Report>();
         }
+        #endregion
+
+        #region Properties
         public string Discription
         {
             get { return _Discription; }
@@ -56,6 +62,13 @@ namespace homework8
             get { return _Reports; }
             set { _Reports = value; }
         }
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Возвращает информацию о задаче
+        /// </summary>
+        /// <returns>Строка string</returns>
         public override string ToString()
         {
             string retStr = String.Empty;
@@ -75,39 +88,6 @@ namespace homework8
 
             return retStr;
         }
-
-
-        static public DateTime EnterDate()
-        {
-            DateTime date = DateTime.Now;
-            bool flag = true;
-            Console.WriteLine("Введите дату в формате dd.MM.yyyy");
-            do
-            {
-                if (DateTime.TryParse(Console.ReadLine(), out DateTime resultDate) && resultDate >= DateTime.Now)
-                {
-                    date = resultDate;
-                    flag = false;
-                }
-                else
-                {
-                    Console.WriteLine("Введите реальную дату в формате dd.MM.yyyy");
-                }
-            }
-            while (flag);
-            return date;
-        }
-
-        public Report GetReport(string text, Executor executor)
-        {
-            Report report = null;
-
-            report.Text = text;
-            report.Date = DateTime.Now;
-            report.Executor = executor;
-
-            executor.TaskAndReports[this] = report;
-            return report;
-        }
+        #endregion
     }
 }

@@ -1,6 +1,9 @@
 ﻿
 namespace homework8
 {
+    /// <summary>
+    /// Перечисление типов статуса задачи
+    /// </summary>
     enum TaskStatuses
     {
         Назначена,

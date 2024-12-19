@@ -10,6 +10,7 @@ namespace Tumakov8
         private Song _Previous;
         #endregion
 
+        #region Constructors
         public Song(string name, string author)
         {
             _Author = author;
@@ -29,6 +30,7 @@ namespace Tumakov8
             _Author = "Семён Осипов";
             _Previous = null;
         }
+        #endregion
 
         #region Properties
         public string Name
@@ -36,7 +38,6 @@ namespace Tumakov8
             get { return _Name; }
             set { _Name = value; }
         }
-
         public string Author
         {
             get { return _Author; }

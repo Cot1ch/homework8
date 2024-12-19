@@ -11,6 +11,9 @@ namespace homework8
             Taska();
         }
 
+        /// <summary>
+        /// Task Manager
+        /// </summary>
         static void Taska()
         {
             List<Project> projects = new List<Project>();
@@ -153,6 +156,7 @@ namespace homework8
             project.ChangeStatus();
             Console.WriteLine(project.ToString());
             
+            //Фабрикуем отчетики
             Report report1 = new Report()
             {
                 Text = "Список угроз составлен: <>",
@@ -163,7 +167,7 @@ namespace homework8
 
             Report report2 = new Report()
             {
-                Text = "Список угроз составлен: <>",
+                Text = "График составлен",
                 Date = DateTime.Now,
                 Executor = task2.Executor
             };
@@ -171,7 +175,7 @@ namespace homework8
 
             Report report3 = new Report()
             {
-                Text = "Список угроз составлен: <>",
+                Text = "Пользователь будет рад интерфейсу, так как он хотя бы есть",
                 Date = DateTime.Now,
                 Executor = task3.Executor
             };
@@ -179,7 +183,7 @@ namespace homework8
 
             Report report4 = new Report()
             {
-                Text = "Список угроз составлен: <>",
+                Text = "Синхронизируется даже с пылесосом",
                 Date = DateTime.Now,
                 Executor = task4.Executor
             };
@@ -187,7 +191,7 @@ namespace homework8
 
             Report report5 = new Report()
             {
-                Text = "Список угроз составлен: <>",
+                Text = "Тесты пройдены",
                 Date = DateTime.Now.AddDays(-2),
                 Executor = task5.Executor
             };
@@ -195,7 +199,7 @@ namespace homework8
 
             Report report6 = new Report()
             {
-                Text = "Список угроз составлен: <>",
+                Text = "Орет как петух в деревне",
                 Date = DateTime.Now,
                 Executor = task6.Executor
             };
@@ -203,7 +207,7 @@ namespace homework8
 
             Report report7 = new Report()
             {
-                Text = "Список угроз составлен: <>",
+                Text = "Список угроз дополнен",
                 Date = DateTime.Now,
                 Executor = task7.Executor
             };
@@ -211,7 +215,7 @@ namespace homework8
 
             Report report8 = new Report()
             {
-                Text = "Список угроз составлен: <>",
+                Text = "Тимлид не умрет от жажды",
                 Date = DateTime.Now,
                 Executor = task8.Executor
             };
@@ -219,7 +223,7 @@ namespace homework8
 
             Report report9 = new Report()
             {
-                Text = "Список угроз составлен: <>",
+                Text = "К релизу готово",
                 Date = DateTime.Now,
                 Executor = task9.Executor
             };

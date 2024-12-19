@@ -15,7 +15,6 @@ namespace Tumakov8
         #endregion
 
         #region Constructors
-
         public BankAccount3(decimal balance, Account account)
         {
             _account = account;
@@ -83,6 +82,11 @@ namespace Tumakov8
             }
             return false;
         }
+
+        /// <summary>
+        /// Метод переводит (вычитает и прибавляет) сумму с одного счёта на другой
+        /// </summary>
+        /// <returns></returns>
         public bool MoneyTransfer(BankAccount3 bankAccount, decimal moneyy)
         {
             if (bankAccount.Remove(moneyy))
@@ -92,7 +96,10 @@ namespace Tumakov8
             }
             return false;
         }
-        #endregion
+
+        /// <summary>
+        /// Записывает в файл информацию о переводе
+        /// </summary>
         public void Dispose(BankTransaction transaction)
         {
             string str = $"===========\nНомер счёта: {_Id}\n{transaction.Info()}";
@@ -100,6 +107,7 @@ namespace Tumakov8
 
             GC.SuppressFinalize(this);
         }
+        #endregion
 
         public enum Account
         {

@@ -6,13 +6,16 @@ namespace homework8
 {
     internal class Project
     {
+        #region Fields
         string _Discription;
         DateTime _DeadLine;
         Customer _Customer;
         Executor _TeamLid;
         List<Task> _Tasks;
         ProjectStatuses _Status;
+        #endregion
 
+        #region Constructors
         public Project()
         {
             _Tasks = new List<Task>();
@@ -28,6 +31,9 @@ namespace homework8
             _Tasks = tasks;
             _Status = ProjectStatuses.Проект;
         }
+        #endregion
+
+        #region Properties
         public string Discription
         {
             get { return _Discription; }
@@ -58,7 +64,13 @@ namespace homework8
             get { return _Status; }
             set { _Status = value; }
         }
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Проверяет, все ли задачи проекиы выполнены
+        /// </summary>
+        /// <returns>Значение типа bool</returns>
         public bool CheckTaskStatuses()
         {
             foreach (Task task in _Tasks)
@@ -71,6 +83,10 @@ namespace homework8
             return true;
         }
 
+        /// <summary>
+        /// Метод возвращает информацию о проекте
+        /// </summary>
+        /// <returns>Строка string</returns>
         public override string ToString()
         {
             string tasks = String.Empty;
@@ -82,29 +98,14 @@ namespace homework8
 
             return retStr;
         }
+
+        /// <summary>
+        /// Выводит новый статус проекта
+        /// </summary>
         public void ChangeStatus()
         {
-            Console.WriteLine($"\t\t\t\t\tСтатус проекта изменён! Новый статус: {Status}");
+            Console.WriteLine($"\n\n\nСтатус проекта изменён! Новый статус: {Status}\n\n\n");
         }
-        public DateTime EnterDate()
-        {
-            DateTime date = DateTime.Now;
-            bool flag = true;
-            Console.WriteLine("Введите дату в формате dd.MM.yyyy");
-            do
-            {
-                if (DateTime.TryParse(Console.ReadLine(), out DateTime resultDate) && resultDate >= DateTime.Now)
-                {
-                    date = resultDate;
-                    flag = false;
-                }
-                else
-                {
-                    Console.WriteLine("Введите реальную дату в формате dd.MM.yyyy");
-                }
-            }
-            while (flag);
-            return date;
-        }
+        #endregion
     }
 }

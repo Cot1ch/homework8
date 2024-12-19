@@ -77,6 +77,11 @@ namespace Tumakov8
             }
             return false;            
         }
+
+        /// <summary>
+        /// Метод переводит (вычитает и прибавляет) сумму с одного счёта на другой
+        /// </summary>
+        /// <returns></returns>
         public bool MoneyTransfer(BankAccount2 bankAccount, decimal moneyy)
         {
             if (bankAccount.Remove(moneyy))
